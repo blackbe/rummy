@@ -99,40 +99,40 @@ class Deck:
 		random.shuffle(self.cards)
 		
     def deal_card(self, card):
-		""" Deal a Card to the Player
-		Args:
-			card:  The Card object provided to Player as part of the deal
-		Returns:
-			No returns
-		"""
-		try:
-			self.hand.append(card)
-			if len(self.hand) > 7:
-				raise ValueError('ERROR: Player cannot have more than 7 cards during turn')
-		except ValueError as err:
-			print(err.args) 
+        """ Deal a Card to the Player
+        Args:
+        	card:  The Card object provided to Player as part of the deal
+        Returns:
+        	No returns
+        """
+        try:
+        	self.hand.append(card)
+        	if len(self.hand) > 7:
+        		raise ValueError('ERROR: Player cannot have more than 7 cards during turn')
+        except ValueError as err:
+        	print(err.args) 
 	
     def draw_cards(self):
-		""" Draw a card from the top of the Deck
-		Args:
-			No args
-		Returns:
-			a Card Object
-		"""
-		s = self.stack[0]
-		self.cards.pop(0)
-		return s
+        """ Draw a card from the top of the Deck
+        Args:
+        	No args
+        Returns:
+        	a Card Object
+        """
+        s = self.stack[0]
+        self.cards.pop(0)
+        return s
 
     def discard(self):
-		""" Discard a card from the players hand
-		Args:
-			No args
-		Returns:
-			a Card Object
-		"""
-		p = self.pile[0]
-		self.cards.append(0)
-		return p
+        """ Discard a card from the players hand
+        Args:
+        	No args
+        Returns:
+        	a Card Object
+        """
+        p = self.pile[0]
+        self.cards.append(0)
+        return p
 """
 
 
